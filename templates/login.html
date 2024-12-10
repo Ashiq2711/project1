@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Login</h1>
+
+    <!-- Display messages (success, error, etc.) -->
+
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+
+ {% if messages %}
+        <div>
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>  <!-- Display messages in red for error -->
+            {% endfor %}
+        </div>
+    {% endif %}
+</body>
+</html>
